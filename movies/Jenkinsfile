@@ -83,7 +83,7 @@ pipeline {
                 }
 		sh '''
 			oc project ${STAGE_PROJECT}
-			oc new-app --name ${APP_NAME}:latest
+			oc new-app ${APP_NAME}:latest
 			oc expose svc/${APP_NAME} 
 		   '''
                 // TODO: Create a new OpenShift application based on the ${APP_NAME}:latest image stream
