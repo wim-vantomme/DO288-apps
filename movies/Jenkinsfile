@@ -82,7 +82,7 @@ pipeline {
                     }
                 }
 		sh '''
-			oc project ${STAGE_PROJECT}
+			oc project ${DEV_PROJECT}
 			oc new-app ${APP_NAME}:latest
 			oc expose svc/${APP_NAME} 
 		   '''
